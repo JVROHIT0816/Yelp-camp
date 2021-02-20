@@ -1,0 +1,57 @@
+<%- layout('layouts/boilerplate') %> 
+<div class="row">
+    <h1 class="text-center">NEW CAMPGROUND</h1>
+    <div class="col-md-6 offset-md-3">
+        <form action="/camps" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="camp[title]" required>
+                <div class="valid-feedback">
+                    Looks Good!!                    
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" id="location" name="camp[location]" required>
+                <div class="valid-feedback">
+                    Looks Good!!                    
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Choose Image(s)</label>
+                <input class="form-control" type="file" id="formFile" name="image" multiple>
+            </div>
+            <!-- <div class="mb-3">
+                <label class="form-label" for="image">Image Url</label>
+                <input class="form-control" type="text" id="image" name="camp[image]" required>
+                <div class="valid-feedback">
+                    Looks Good!!                    
+                </div>
+            </div> -->
+            <div class="mb-3">
+                <label class="form-label" for="price">Price</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">$</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="00.00" aria-label="Username" aria-describedby="basic-addon1" name="camp[price]" required>
+                    <div class="valid-feedback">
+                        Looks Good!!                    
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description" name="camp[description]" placeholder="" required></textarea>
+                <div class="valid-feedback">
+                    Looks Good!!                    
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add</button>
+            </div>    
+        </form>
+        <a href="/camps" class="btn btn-info">Back To All Camps</a>
+    </div>
+</div>
+
